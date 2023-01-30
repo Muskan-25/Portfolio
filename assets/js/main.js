@@ -260,4 +260,22 @@
    */
   new PureCounter();
 
+  
+
 })()
+
+function sendEmail(){
+  var email = document.getElementById('email');
+  Email.send({
+    SecureToken : "6f39d310-1b44-47df-aa92-aafcfe52a491 ",
+    ReplyTo : email.value,
+    From:"ms312093@gmail.com",
+    To : 'ms312093@gmail.com',
+    ReplyFrom : email.value,
+    Subject : document.getElementById("subject").value,
+    Body : "Name : " + document.getElementById("name").value
+          +"<br> Email : " + email.value + "<br> Message : " + document.getElementById("message").value
+}).then(
+  message => alert(message)
+);
+}
